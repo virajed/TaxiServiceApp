@@ -57,10 +57,12 @@ function retrieve($sql)
 
 	if($ok)
 	{
+		$rows = array();
 		while($r = mysqli_fetch_array($ok))
 		{
-   			echo $r[0];
+   			$rows[] = $r;
 		}
+		return $rows;
 	}
 	else{return mysqli_error($conn);}
 }

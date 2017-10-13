@@ -8,7 +8,7 @@ $sql = "SELECT * FROM customer";
 //echo $sql;
 $data = retrieve($sql);
 
-
+echo json_encode($data);
 /*
 $all = array();
 while($r = mysqli_fetch_array($date))

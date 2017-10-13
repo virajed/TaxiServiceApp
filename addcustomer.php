@@ -39,9 +39,7 @@ $(document).ready(function(){
 			method:"POST",
 			async:true,
 			data:{c_fn: $("#c_fn").val() , c_ln:$("#c_ln").val() },
-			success : function(msg){
-				$("#response").html(msg);
-			}
+			success : function(msg){$("#response").html(msg);}
 				
 			});		
 	});
@@ -51,6 +49,24 @@ $(document).ready(function(){
 	});
 
 });
+
+
+//Angular
+var app = angular.module("myApp",[]);
+
+app.controller("myCtrl",function($scope,$http){ 
+
+$http.get('list.php').then(
+	function($response){
+		$scope.customers = $response.data;
+	},
+
+	function($err){}
+
+	);
+
+  });
+
 </script>
 
 
@@ -58,7 +74,15 @@ $(document).ready(function(){
 
 		<div class="col-md-6"><!--col 2-->
 		<button type="button" name="sh_cus" id="sh_cus" class="btn btn-default" value=""> Show </button>
-			<div id="cuslist" class="">
+			<div id="cuslist" class="" ng-app="myApp" ng-controller="myCtrl">
+
+			<table class="table table-striped">
+				<tr ng-repeat="cus in customers">
+				<td> {{ cus[0] }}  </td>
+				<td> {{ cus[1] }} </td>
+				</tr>
+			</table>
+
 			</div>
 
 		</div>
