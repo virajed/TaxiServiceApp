@@ -11,9 +11,19 @@
 	<div class="row"> <!--row 1-->
 		<div class="col-md-4"><!--col 1-->
 
+			<?php
+				form_create();
 
+				form_input('fn','Full Name');
 
-			Hello 
+				form_input('cn','Contact','tel');
+
+				form_input('cn','Contact','number');
+
+				form_button('submit','Save');
+
+				form_close();
+			?> 
 
 		</div>
 

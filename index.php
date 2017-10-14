@@ -9,7 +9,7 @@
 <body>
 <?php
 
-include_once('lib/lib_form.php');
+include_once('LibForms/lib_form.php');
 
 $no = isset($_GET["p"]) ? $_GET["p"] : 1;
 

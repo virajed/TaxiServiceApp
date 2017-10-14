@@ -24,7 +24,7 @@ include_once('lib/lib_form.php');
 		<div class="col-md-4"><!--col 2-->
 
 <?php
-	form_create('form-horizontal','','post','?p=add_reserv_a');
+	form_create('form-horizontal','','post','?p=reserv_add_a');
 
 	form_input('loc','Start');
 
@@ -65,7 +65,7 @@ $("button").click(function(){
 
 	$.ajax({
 
-		url: "script.php?p=add_reserv_a",
+		url: "script.php?p=reserv_add_a",
 		method:"POST",
 		data:{loc:$("#loc").val(), des:$("#des").val() ,dt:$("#dt").val() ,tm:$("#tm").val() ,num:$("#num").val() ,type:$("#type").val()},
 		success:function(m){
